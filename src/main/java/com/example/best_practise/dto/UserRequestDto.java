@@ -1,7 +1,7 @@
 package com.example.best_practise.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,13 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserRequestDto {
 
-  @NotBlank
+  @NotBlank(message = "Ism bo'sh bo'lishi mumkin emas")
   private String userName;
 
-  @NotBlank
+  @NotBlank(message = "Email formati noto'g'ri!!")
   private String email;
 
-  @NotNull
-  private Integer phoneNumber;
-
+  @Pattern(regexp = "^\\+998\\d{9}$", message = "Telefon formati noto'g'ri!!")
+  private String phoneNumber;
 }
