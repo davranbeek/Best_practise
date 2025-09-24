@@ -34,7 +34,7 @@ public class UserController {
   }
 
   @PostMapping
-  ResponseEntity<Void> createUser(@RequestBody UserRequestDto userRequestDto) {
+  ResponseEntity<Void> createUser(@Valid @RequestBody UserRequestDto userRequestDto) {
     userService.createUser(userRequestDto);
     return ResponseEntity.ok().build();
   }

@@ -26,6 +26,6 @@ public class PcEntity extends BaseEntity {
   @Column(name = "model")
   private String model;
 
-  @Column(name = "year")
+  @Column(name = "production_year")
   private Integer year;
 }
